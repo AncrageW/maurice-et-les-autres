@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* variables */
+.container-main {
+  @apply pl-4 md:pl-64 pr-4 ;
+}
+/* ghost content */
+
+.ghost-spectacle {
+  p {
+    @apply container-main text-slate-900 mb-3;
+  }
+  h2 {
+    @apply container-main relative text-4xl text-slate-800 mb-6  after:absolute after:h-[1px] after:top-12 after:bg-slate-200 after:left-0 after:w-full;
+  }
+  h3 {
+    @apply container-main text-slate-900 text-xl my-4;
+  }
+  h5 {
+    @apply container-main text-slate-900 text-lg mt-4 mb-2;
+  }
+  blockquote {
+    @apply container-main text-slate-900 mb-1;
+  }
+  /* gallery */
+  .kg-gallery-container {
+    @apply flex flex-wrap;
+    .kg-gallery-row {
+      @apply w-1/3 ;
+      img {
+        @apply w-full border-white border-b;
+      }
+
+    }
+  }
+  .kg-card {
+    /* video */
+    &.kg-embed-card {
+      @apply pl-60;
+      iframe {
+        @apply mb-2;
+      }
+    }
+    &.kg-image-card {
+      &.kg-width-wide {
+        img {
+          @apply md:ml-60 w-[30rem];
+        }
+      }
+      &.kg-card-hascaption {
+        @apply inline-block w-1/2 md:w-1/6 max-h-[14rem] overflow-hidden relative;
+        img {
+          @apply object-cover;
+        }
+        figcaption {
+          @apply absolute bottom-0 py-1 px-3 text-sm bg-slate-100 text-slate-700;
+        }
+      }
+    }
+  }
+}
+
+
+.neon {
+  @apply transition duration-200;
+  text-shadow:
+  0 0 10px rgba(236, 254, 255, .7),
+  0 0 40px rgba(236, 254, 255, .7),
+  0 0 100px rgba(236, 254, 255, .7);
+  &.neon-hover {
+    &:hover {
+      text-shadow:
+        0 0 5px rgba(236, 254, 255, .7),
+        0 0 20px rgba(236, 254, 255, .7),
+        0 0 60px rgba(236, 254, 255, .7);
+    }
+  }
+  
+}
+
+::selection {
+  @apply bg-cyan-200;
+}
