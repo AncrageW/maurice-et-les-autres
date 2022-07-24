@@ -4,15 +4,24 @@ import {
 
 export default function Footer () {
   return (
-    <div className="lg:pl-60 pb-20 md:pb-0">
-      <footer className='border-t border-slate-200 py-5 container px-4 text-slate-800 md:grid md:grid-cols-3 space-y-8 md:space-y-0'>
+    <div className='pb-[4rem] lg:pb-0'>
+      <footer className='border-t border-slate-200 py-5 px-4 text-slate-700 grid lg:grid-cols-3 gap-6 lg:gap-10'>
           <div className="flex text-slate-800 text-sm">
-            <div className="mr-4">Facebook</div>
-            <div className="mr-4">Instagram</div>
+            
+            <div className="mr-4">
+              <a href="https://www.facebook.com/mauriceetlesautres/" target="_blank">
+                Facebook
+              </a>
+            </div>
+            <div className="mr-4">
+              <a href="https://www.instagram.com/mauriceetlesautres/" target="_blank">
+                Instagram
+              </a>
+            </div>
           </div>
           <div className='text-sm text-slate-800'>
             <audio
-              className='max-w-full pointer-events-auto mb-4 md:hidden'
+              className='max-w-full pointer-events-auto mb-4'
               controls
               src="https://storage.googleapis.com/mauriceetlesautres/audio/music-for-a-while.mp3">
                   <MusicNoteIcon className='w-5'></MusicNoteIcon>

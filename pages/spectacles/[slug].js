@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getSinglePost, getPosts } from '../../lib/posts';
-import { Container, Button, Divider, Tag } from '../../components/ui'
+import { Button, Divider, Tag } from '../../components/ui'
 import { CalendarIcon, ArrowSmRightIcon } from '@heroicons/react/outline';
 
 export default function Spectacle ({post}) {
  const [dates, setDates] = useState(null)
  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   
+
+
  useEffect(() => {
    if (post.codeinjection_foot !== null) {
      setDates(JSON.parse(post.codeinjection_foot))
@@ -23,8 +25,8 @@ export default function Spectacle ({post}) {
   }, [])
   
   return (
-    <div>
-      <Container className="pt-8 md:pt-24 pb-10">
+    <div className='max-w-6xl mx-auto'>
+      <div className="pt-8 md:pt-24 pb-10">
         <h1 className="text-4xl md:text-6xl text-slate-800 mb-6">{post.title}</h1>
         <h3 className="text-xl text-slate-800 mb-6">{post.excerpt}</h3>
         {post.tags.some(t => t.slug === 'en-tournee') && (
@@ -33,10 +35,10 @@ export default function Spectacle ({post}) {
         {post.tags.some(t => t.slug === 'en-creation') && (
             <Tag color="violet">En création</Tag>
         )}
-      </Container>
-      <div className='mb-20 md:grid md:grid-cols-2 md:gap-10'>
+      </div>
+      <div className='mb-20 md:grid md:grid-cols-2 md:gap-10  '>
         <img src={post.feature_image} alt={post.title}/>
-        <div>
+        {/* <div>
           <div className='divide-y divide-slate-200'>
             {dates && (
               <h3 className='text-2xl'>Dates</h3>
@@ -74,19 +76,13 @@ export default function Spectacle ({post}) {
               <Link href="/calendrier/">
               <a>
                 <Button color="blue">Plus de dates</Button>
-             
               </a>
             </Link>
             </div>
-          
           )}
-
-        </div>
-
+        </div> */}
       </div>
-
-        <div dangerouslySetInnerHTML={{ __html: post.html }} className='ghost-spectacle pb-20'/>
-      
+      <div dangerouslySetInnerHTML={{ __html: post.html }} className='ghost-spectacle pb-20'/>
     </div>
   )
 }

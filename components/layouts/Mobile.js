@@ -12,40 +12,48 @@ export default function Mobile ({mobiles, links}) {
   }
 
   return (
-    <div className='md:hidden w-full h-16'>
-      <div className={`${isActiveMenu ? '-translate-y-full' : 'translate-y-full' } bg-white border-t-2 border-slate-200 duration-200 transform transition w-full`}>
-          {links.map((el, i) => (
-            el.icon === undefined && (
-              <Link href={el.link} key={i}>
-                <a>
-                  <div className='py-2 px-3'>{el.name}</div>
+    <div className={`md:hidden w-full absolute bottom-0 z-50 overflow-hidden`}>
+        {/* tiroir mobile */}
+        <div className={`${isActiveMenu ? ' h-auto max-h-[10rem]' : 'max-h-0' } bg-slate-50 overflow-hidden border-t border-cerulean-400 duration-300 transform transition-max-height w-full z-0`}>
+            {links.map((el, i) => (
+              el.icon === undefined && (
+                <div className={`${path === el.link && 'bg-cerulean-100'}`}>
+                <Link href={el.link} key={i}>
+                  <a>
+                    <div className='py-2 px-3 text-sm'>{el.name}</div>
+                  </a>
+                </Link>
+                </div>
+              )
+            ))}
+            
+        </div>
+        {/* mobile menu visible */}
+        <div className={`grid grid-cols-4 bg-slate-50 inset-x-0 h-16 `}>
+          {mobiles.map((mobile, i ) => (
+            <div 
+              key={i} 
+              className={`flex items-center justify-center text-xs text-slate-900 
+                ${path === mobile.link && 'bg-cerulean-100'}`}
+              onClick={() => setIsActiveMenu(false)}
+            >
+              <Link href={mobile.link}>
+                <a className='flex flex-col items-center justify-center'>
+                  <mobile.icon className='w-5'></mobile.icon>
+                  {mobile.name}
                 </a>
               </Link>
-            )
+            </div>
           ))}
-           
-      </div>
-      <div className='grid grid-cols-4 h-full z-20 bg-white absolute bottom-0 inset-x-0'>
-        {mobiles.map((mobile, i ) => (
-          <div key={i} className={`flex items-center justify-center text-xs text-slate-900 border-t-2 
-          ${path === `${mobile.link}` ? 'border-slate-900' : 'border-slate-200'}`}>
-            <Link href={mobile.link}>
-              <a className='flex flex-col items-center justify-center'>
-                <mobile.icon className='w-6'></mobile.icon>
-                {mobile.name}
-              </a>
-            </Link>
+          <div 
+            onClick={() => handleClick()}
+            className={`h-full cursor-pointer flex flex-col items-center justify-center text-xs text-slate-900  
+            ${path === `menu` && 'bg-cerulean-100'}
+            ${isActiveMenu && 'text-cerulean-700'}`}>
+              <MenuIcon className='w-5'></MenuIcon>
+              Menu
           </div>
-        ))}
-        <div 
-          onClick={() => handleClick()}
-          className={`h-full cursor-pointer flex flex-col items-center justify-center text-xs text-slate-900 border-t-2 
-          ${path === `menu` ? 'border-slate-900' : 'border-slate-200'}
-          ${isActiveMenu && 'text-blue-700'}`}>
-            <MenuIcon className='w-6'></MenuIcon>
-            Menu
         </div>
-      </div>
     </div> 
   )
 }

@@ -1,19 +1,16 @@
-export default function Button ({children, className, color, active}) {
+export default function Button ({children, className, color}) {
 
-
-  const renderColor= (color, active) => {
-    switch(color) {
-      case 'blue': 
-       return ' text-blue-600 ring-blue-300 ring-offset-blue-50 hover:ring-offset-white hover:bg-blue-700 hover:text-white hover:ring-blue-700' ;break
-      case 'cyan':  
-        return'text-cyan-600 ring-cyan-300 ring-offset-cyan-50 hover:ring-offset-white hover:bg-cyan-700 hover:text-white hover:ring-cyan-700';break
-
+  const renderColor = (color) => {
+    switch (color) {
+      case 'cerulean': return 'text-white bg-cerulean-400 hover:bg-cerulean-600 focus:ring focus:ring-cerulean-200'; break
+      case 'turquoiseGreen': return 'text-white bg-turquoiseGreen-500 hover:bg-turquoiseGreen-600 focus:ring focus:ring-turquoiseGreen-200'; break
     }
   }
 
+
   return (
-    <button className={`transition duration-200 border border-slate-200 ring-1 ring-offset-1 py-1 px-2 text-sm inline-block ${renderColor(color, active)} ${className}`}>
+    <button className={`${renderColor(color)} flex items-center justify-center px-2.5 py-1.5 rounded-sm ${className}`}>
       {children}
-      </button>
+    </button>
   )
 }

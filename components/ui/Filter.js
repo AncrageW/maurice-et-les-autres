@@ -3,16 +3,16 @@ export default function Filter ({children, className, color, active}) {
 
   const renderColor= (color, active) => {
     switch(color) {
-      case 'blue': 
+      case 'cerulean': 
         switch(active) {
-          case true: return'text-white  bg-blue-700';break
-          case false: return'text-blue-600 ring-blue-300 hover:ring-blue-700 ring-offset-blue-50 hover:ring-offset-white hover:bg-blue-700 active:text-white hover:text-white';break
+          case true: return'text-white bg-cerulean-500 border-cerulean-500';break
+          case false: return'text-cerulean-800 hover:bg-cerulean-300 border-cerulean-500 active:text-white hover:text-white';break
         }
     }
   }
 
   return (
-    <button className={`transition duration-200 border border-slate-200 ring-1 ring-offset-1 py-1 px-2 text-sm inline-block ${renderColor(color, active)} ${className}`}>
+    <button className={`transition duration-200 border-r py-1 px-2 inline-block ${renderColor(color, active)} ${className}`}>
       {children}
       </button>
   )
