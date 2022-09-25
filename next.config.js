@@ -7,7 +7,7 @@ module.exports = {
     domains: [
     'static.ghost.org',
     'storage.googleapis.com',
-    'lesautres.com'
+    'back.mauriceetlesautres.com'
     ],
   },
 }
