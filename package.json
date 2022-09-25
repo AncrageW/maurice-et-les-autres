@@ -1,12 +1,13 @@
 {
-  "name": "my-next-app",
+  "name": "mauriceetlesautres",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build && gcloud app deploy --project mauriceetlesautres"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
