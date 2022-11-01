@@ -35,7 +35,7 @@ const date = new Date()
 
   const renderList = (item, i) => (
     <div className='group min-h-[4rem] flex items-center '>
-      <div className='lg:grid lg:grid-cols-9 py-3 gap-8'>
+      <div className='lg:grid lg:grid-cols-9 py-3 gap-8 w-full'>
         <div className='md:col-span-2'>
           <Link href={`/spectacles/${item.slug}`}>
             <a>
