@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build && gcloud app deploy --project=mauriceetlesautres"
+    "deploy": "npm run build && gcloud app deploy --project=mauriceetlesautres",
+    "see": "gcloud app browse"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",

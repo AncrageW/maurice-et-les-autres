@@ -1,5 +1,14 @@
 {
   "/_app": "pages/_app.js",
+  "/api/hello": "pages/api/hello.js",
+  "/calendrier": "pages/calendrier.js",
+  "/compagnie": "pages/compagnie.js",
+  "/contact": "pages/contact.js",
+  "/espace-pro": "pages/espace-pro.js",
+  "/": "pages/index.js",
+  "/spectacles/[slug]": "pages/spectacles/[slug].js",
+  "/spectacles": "pages/spectacles.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
