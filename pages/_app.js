@@ -8,13 +8,11 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url) => {
-    document.getElementById('anchor').scrollIntoView({block: 'start', behavior: 'smooth'});
-    console.log(
-      `App is changing to ${url}`
-    )
+      document.getElementById('anchor').scrollIntoView({block: 'start', behavior: 'smooth'});
     }
     router.events.on('routeChangeComplete', handleRouteChange)
   }, [])
+ 
 
 
  
