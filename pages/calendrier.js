@@ -33,7 +33,6 @@ const date = new Date()
     setDatas(arr)
 
   }, [spectacles])
-
   
   const renderList = (item, i) => (
     <div className='group min-h-[4rem] flex items-center '>
