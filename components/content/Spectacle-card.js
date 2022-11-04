@@ -13,7 +13,7 @@ export default function Card ({item, tag = false, key}) {
     return filtered[0]?.name
   }
   return (
-    <Link href={`/spectacles/${item.slug}`} key={key}>
+    <Link href={`/spectacles/${item.slug}`}>
       <a className='h-full group'>
         <article className='h-full flex flex-col justify-between'>
           <main className='mb-4 relative'>

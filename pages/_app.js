@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
  
   return (
     <Landing>
-      <div id="anchor" class="h-0">&nbsp;</div>
+      <div id="anchor" className="h-0">&nbsp;</div>
       <Component {...pageProps} />
     </Landing>
   )

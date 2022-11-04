@@ -20,7 +20,9 @@ export default function Home({page, spectacles = []}) {
       <main className='py-10 lg:py-20 px-3 max-w-6xl mx-auto'>
         <div className='grid lg:grid-cols-3 gap-6 lg:gap-10'>
           {spectacles.map((item, i) => (
-            <SpectacleCard item={item} key={i}></SpectacleCard>
+            <span  key={i}>
+              <SpectacleCard item={item}></SpectacleCard>
+            </span>
           ))}
         </div>
       </main>

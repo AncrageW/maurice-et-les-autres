@@ -78,7 +78,7 @@ const date = new Date()
 
   return (
     <Landing page={page}>
-      <div className='pt-6 lg:pt-32 pb-10 lg:pb-20'>
+      <div className='py-10 lg:py-20'>
           <h1 className="text-cerulean-800 text-3xl lg:text-5xl font-light mb-6 lg:mb-10">Calendrier</h1>
         <div>
           <div className='flex flex-wrap items-center lg:mb-4 lg:bg-white'>

@@ -5,7 +5,7 @@ import Landing from "../components/layouts/Landing"
 export default function Contact ({page}) {
   return (
     <Landing page={page}>
-      <div className='pt-6 lg:pt-32 pb-10 lg:pb-20'>
+      <div className='pt-10 lg:py-20'>
         <h1 className="text-cerulean-800 text-3xl lg:text-5xl font-light mb-6 lg:mb-10">Contact</h1>
         <div dangerouslySetInnerHTML={{__html: page.html}} className="ghost-spectacle"></div>
       </div>

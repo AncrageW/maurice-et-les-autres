@@ -29,13 +29,13 @@ export default function EspacePro ({page, spectacles}) {
 
   return(
     <Landing page={page}>
-      <div className='pt-6 lg:pt-32 pb-10 lg:pb-20'>
+      <div className='py-10 lg:py-20'>
         <h1 className="text-cerulean-800 text-3xl lg:text-5xl font-light mb-6 lg:mb-10">Espace pro</h1>
         <div className='grid lg:grid-cols-2 gap-6 lg:gap-20'>
           {sortedSpectacles.map((item, i) => (
             <div key={i}>
-              {item.tags.some(t => t.slug === 'en-tournee') && <Tag color="cerulean" className="mb-2">En tournée</Tag>}
-              {item.tags.some(t => t.slug === 'en-creation') && <Tag color="turquoiseGreen" className="mb-2">En création</Tag>}
+              {/* {item.tags.some(t => t.slug === 'en-tournee') && <Tag color="cerulean" className="mb-2">En tournée</Tag>} */}
+              {/* {item.tags.some(t => t.slug === 'en-creation') && <Tag color="turquoiseGreen" className="mb-2">En création</Tag>} */}
                 <Link href={`/spectacles/${item.slug}/`}>
                   <a>
                     <h3 className='text-xl lg:text-2xl text-cerulean-800 mb-1'>{item.title}</h3>

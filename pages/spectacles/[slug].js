@@ -26,7 +26,7 @@ export default function Spectacle ({post}) {
     <Landing page={post} container={false}>
       <header className="relative">
         <div className="relative h-[35rem] bg-no-repeat bg-cover bg-center" style={{backgroundImage: `url(${post.feature_image})`}}>
-          <div class="absolute bg-black opacity-30 inset-0 z-10"></div>
+          <div className="absolute bg-black opacity-30 inset-0 z-10"></div>
           <div className='relative z-20 h-full flex flex-col justify-center items-center'>
             <h1 className="text-4xl lg:text-8xl mb-6 px-4 pt-4 lg:pt-[6.5rem] text-white text-center">{post.title}</h1>
             <h2 className="text-xl lg:text-2xl mb-6 px-4 text-white text-center">{post.excerpt}</h2>

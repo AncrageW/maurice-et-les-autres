@@ -4,23 +4,15 @@ import { getSpectacles, getSinglePage } from '../../lib/posts'
 import SpectacleCard from '../../components/content/Spectacle-card'
 
 export default function Spectacles ({page, spectacles}) {
-  useEffect(() => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-    console.log("scroll to top")
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
     <Landing page={page}>
-      <div className='pt-6 lg:pt-32 pb-10 lg:pb-20'>
+      <div className='py-6 lg:py-20'>
           <h1 className="text-cerulean-800 text-3xl lg:text-5xl font-light mb-6 lg:mb-10">Spectacles</h1>
           <div className='grid lg:grid-cols-3 gap-6 lg:gap-10'>
             {spectacles.map((item, i) => (
-              <SpectacleCard item={item} key={i} tag></SpectacleCard>
+              <span  key={i}>
+                <SpectacleCard item={item} tag></SpectacleCard>
+              </span>
             ))}
           </div>
       </div>
