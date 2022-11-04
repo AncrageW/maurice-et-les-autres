@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
-export default function Landing ({page, children}) {
+export default function Landing ({page, children, container = true}) {
+
   return (
     <div>
        <Head>
@@ -13,7 +14,7 @@ export default function Landing ({page, children}) {
         <meta property="og:image" content={page.feature_image} />
         <meta property="og:site_name" content="Maurice et les autres" />
       </Head>
-      <main className='container px-3 max-w-6xl mx-auto'>
+      <main className={container ? 'px-3 max-w-6xl mx-auto' : ''}>
         {children}
       </main>
     </div>

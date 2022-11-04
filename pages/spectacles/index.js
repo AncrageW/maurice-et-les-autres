@@ -4,6 +4,15 @@ import { getSpectacles, getSinglePage } from '../../lib/posts'
 import SpectacleCard from '../../components/content/Spectacle-card'
 
 export default function Spectacles ({page, spectacles}) {
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    console.log("scroll to top")
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <Landing page={page}>

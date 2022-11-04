@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getSinglePost, getPosts } from '../../lib/posts';
-import { Button, Divider, Tag } from '../../components/ui'
-import { CalendarIcon, ArrowSmRightIcon } from '@heroicons/react/outline';
+import Landing from '../../components/layouts/Landing'
 
 export default function Spectacle ({post}) {
  const [dates, setDates] = useState(null)
  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   
-
 
  useEffect(() => {
    if (post.codeinjection_foot !== null) {
@@ -25,65 +23,23 @@ export default function Spectacle ({post}) {
   }, [])
   
   return (
-    <div className='max-w-6xl mx-auto'>
-      <div className="pt-8 md:pt-24 pb-10">
-        <h1 className="text-4xl md:text-6xl text-slate-800 mb-6">{post.title}</h1>
-        <h3 className="text-xl text-slate-800 mb-6">{post.excerpt}</h3>
-        {post.tags.some(t => t.slug === 'en-tournee') && (
-            <Tag color="cyan">En tournée</Tag>
-        )}
-        {post.tags.some(t => t.slug === 'en-creation') && (
-            <Tag color="violet">En création</Tag>
-        )}
-      </div>
-      <div className='mb-20 md:grid md:grid-cols-2 md:gap-10  '>
-        <img src={post.feature_image} alt={post.title}/>
-        {/* <div>
-          <div className='divide-y divide-slate-200'>
-            {dates && (
-              <h3 className='text-2xl'>Dates</h3>
-            )}
-            {dates && dates.map((date, i ) => (
-                i < 4 && (
-                <div key={i} className='py-4 md:grid md:grid-cols-3 group'>
-                  <div>
-                    <p className='text-sm'>
-                      {date.date2 && <span>du </span>}
-                      {new Date(date.date).toLocaleDateString('fr-FR', options)}
-                    </p>
-                    {date.date2 && ( 
-                      <div className='text-sm flex items-center'>
-                        <ArrowSmRightIcon className='w-4 mr-1'></ArrowSmRightIcon>
-                        au {new Date(date.date2).toLocaleDateString('fr-FR', options)}
-                      </div>
-                    )}
-                  </div>
-                  <p className='text-sm'>{date.city}</p>
-                  <Link href="/calendrier/">
-                    <a>
-                      <div className='group-hover:text-blue-700 text-sm flex items-center'>
-                      <CalendarIcon className='w-4 mr-1.5'></CalendarIcon>
-                      Plus d'informations
-                      </div>
-                    </a>
-                  </Link>
-                </div>) 
-          
-          ))}
+    <Landing page={post} container={false}>
+      <header className="relative">
+        <div className="relative h-[35rem] bg-no-repeat bg-cover bg-center" style={{backgroundImage: `url(${post.feature_image})`}}>
+          <div class="absolute bg-black opacity-30 inset-0 z-10"></div>
+          <div className='relative z-20 h-full flex flex-col justify-center items-center'>
+            <h1 className="text-4xl lg:text-8xl mb-6 px-4 pt-4 lg:pt-[6.5rem] text-white text-center">{post.title}</h1>
+            <h2 className="text-xl lg:text-2xl mb-6 px-4 text-white text-center">{post.excerpt}</h2>
           </div>
-          {dates && dates.length > 4 && (
-            <div className='mt-5'>
-              <Link href="/calendrier/">
-              <a>
-                <Button color="blue">Plus de dates</Button>
-              </a>
-            </Link>
-            </div>
-          )}
-        </div> */}
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} className='ghost-spectacle pb-20'/>
+          {/* <div className='absolute z-10 right-0 bottom-0'>
+            <p className='text-white opacity-50 text-sm pb-2 pr-2'>credit image</p>
+          </div> */}
+        </div>
+      </header>
+      <div className='py-10 lg:py-20 px-3 max-w-6xl mx-auto'>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} className='ghost-spectacle'/>
     </div>
+    </Landing>
   )
 }
 

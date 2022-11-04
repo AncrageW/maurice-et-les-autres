@@ -4,8 +4,9 @@ import {
 
 export default function Footer () {
   return (
-    <div className='pb-[4rem] lg:pb-0'>
-      <footer className='border-t border-slate-200 py-5 px-4 text-slate-700 grid lg:grid-cols-3 gap-6 lg:gap-10'>
+    <div className='pb-20 lg:pb-0'>
+      <footer className='border-t border-slate-200'>
+        <div class="px-3 py-5 max-w-6xl mx-auto grid lg:grid-cols-3 gap-6 lg:gap-10 text-slate-700">
           <div className="flex text-slate-800 text-sm">
             
             <div className="mr-4">
@@ -36,6 +37,7 @@ export default function Footer () {
             N°SIRET : 827 853 201 000 24 <br></br>
             Code APE : 9001Z
           </div>
+        </div>
       </footer>
     </div>
   )

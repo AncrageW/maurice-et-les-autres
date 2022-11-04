@@ -9,6 +9,7 @@ export default function Calendrier ({page, spectacles}) {
   const [datas, setDatas] = useState([])
   const [current, setCurrent] = useState(null)
   const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+
 const date = new Date()
   useEffect(() => {
     // 1. ajouter titre et slug à chaque date 
@@ -33,6 +34,7 @@ const date = new Date()
 
   }, [spectacles])
 
+  
   const renderList = (item, i) => (
     <div className='group min-h-[4rem] flex items-center '>
       <div className='lg:grid lg:grid-cols-9 py-3 gap-8 w-full'>
@@ -150,3 +152,5 @@ export async function getStaticProps(context) {
     }
   }
 }
+
+

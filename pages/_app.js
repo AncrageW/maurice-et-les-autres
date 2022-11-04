@@ -6,9 +6,7 @@ import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }) {
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+
   
   useEffect(() => {
     Router.events.on('routeChangeComplete', () => {

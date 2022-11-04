@@ -66,7 +66,7 @@ export default function Navbar () {
                 {navLinks.map((link, i) => (
                   <Link href={`${link.link}`} key={i}>
                       <a className={`relative h-full flex items-center md:text-sm lg:text-base cursor-pointer`}>
-                        {router.pathname === link.link && (
+                        {router.pathname.includes(link.name.toLowerCase()) && (
                           <div className='absolute h-[2px] inset-x-0 -bottom-[1px] bg-gradient-to-r from-cerulean-400 via-turquoiseGreen-400 to-cerulean-400'></div>
                         )}
                         <div className={`px-6 text-cerulean-800`}>
