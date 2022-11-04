@@ -54,13 +54,12 @@ a {
   }
   /* gallery */
   .kg-gallery-container {
-    @apply flex flex-wrap ;
+    @apply flex flex-wrap lg:flex-nowrap ;
     .kg-gallery-row {
-      @apply w-1/2 ;
+      @apply lg:w-1/2 w-full ;
       img {
-        @apply w-full border-white border-b;
+        @apply w-full ;
       }
-
     }
   }
   .kg-card {
@@ -87,6 +86,17 @@ a {
     }
   }
 }
+.kg-card.kg-embed-card {
+  @apply py-5;
+}
+
+ iframe {
+  @apply w-full;
+ }
+
+ iframe[src*="soundcloud"] { 
+  @apply max-h-[5rem] w-[25rem] max-w-full;
+ }
 
 
 ::selection {
