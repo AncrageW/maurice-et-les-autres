@@ -13,9 +13,6 @@ function MyApp({ Component, pageProps }) {
     router.events.on('routeChangeComplete', handleRouteChange)
   }, [])
  
-
-
- 
   return (
     <Landing>
       <div id="anchor" className="h-0">&nbsp;</div>

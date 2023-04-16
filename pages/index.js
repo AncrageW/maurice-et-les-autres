@@ -1,12 +1,25 @@
 import Landing from '../components/layouts/Landing'
 import { getSinglePage, getSpectacles } from '../lib/posts'
 import SpectacleCard from '../components/content/Spectacle-card'
-export default function Home({page, spectacles = []}) {
+import { useEffect, useState } from 'react';
 
+export default function Home({page, spectacles = []}) {
+  const [src, setSource] = useState(page.feature_image)
+
+  useEffect(() => {
+    secureHttpImages(src, setSource)
+
+   }, [])
+
+  function secureHttpImages (element, setter) {
+    if (element.includes('http://')) {
+      setter(element.replaceAll('http://', 'https://'))
+     }
+   }
   return (
     <Landing page={page} container={false}>
       <header className="relative">
-        <div className="relative h-[35rem] bg-center " style={{backgroundImage: `url(${page.feature_image})`}}>
+        <div className="relative h-[35rem] bg-center " style={{backgroundImage: `url(${src})`}}>
           <div className=''>
             <h1 className="text-4xl lg:text-8xl mb-6 px-4 pt-4 lg:pt-[6.5rem] text-white">Maurice et<br></br> les autres</h1>
             <h2 className="text-xl lg:text-2xl mb-6 px-4 text-white">Compagnie de théâtre musical</h2>

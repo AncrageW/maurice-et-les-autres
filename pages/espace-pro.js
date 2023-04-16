@@ -42,7 +42,7 @@ export default function EspacePro ({page, spectacles}) {
                   </a>
                 </Link>
               <p className='mb-4'>{item.excerpt}</p>
-              {item.documents.length && item.documents?.map((doc, i) => (
+              {item.documents?.length && item.documents?.map((doc, i) => (
                 <div key={i}>
                 {renderPressKit(doc.content, doc.title)}
                 </div>
